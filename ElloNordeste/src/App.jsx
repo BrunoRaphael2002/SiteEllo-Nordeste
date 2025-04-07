@@ -7,6 +7,7 @@ import Diferenciais from './Sections/Diferenciais';
 import Sobre from './Sections/Sobre';
 import Localizacao from './Sections/localizacao';
 import Servicos from './Sections/servicos';
+import MetricsSection from './Sections/metricas';
 
 
 
@@ -16,6 +17,7 @@ function App() {
     <Header/>
     <Carrosel/>
     <Sobre/>
+    <MetricsSection/>
     <Servicos/>
     <Diferenciais/>
     <ContatoInfo/>
