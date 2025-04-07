@@ -1,33 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import HeroCarousel from './Components/Carrosel'
+import Header from './Components/Header'
+import ContatoForm from './Sections/Contatoform'
+import ContatoInfo from './Sections/ContatoInfo'
+import DiferenciaisSection from './Sections/Diferenciais'
+import ServicesSection from './Sections/Servicos'
+import AboutSection from './Sections/Sobre'
+import LocationSection from './Sections/Localizacao'
+import Footer from './Components/Footer'
+
+// Novas seções com base no novo layout visual e cores da logo (azul e vermelho)
+import CTASection from './Sections/CTA'
+import NumerosSection from './Sections/Numeros'
+import ClientesAtendidosSection from './Sections/ClientesAtendidos'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* Cabeçalho com nova identidade visual (azul, branco e vermelho da logo) */}
+      <Header />
+
+      {/* Seção Hero com carrossel de imagens e CTA centralizado */}
+      <HeroCarousel />
+
+      {/* Seção de serviços com cards icônicos modernos */}
+      <ServicesSection />
+
+      {/* Seção sobre com imagem lateral e texto visual */}
+      <AboutSection />
+
+      {/* Seção de números e conquistas da empresa */}
+      <NumerosSection />
+
+      {/* Seção de diferenciais com novos cards e cores */}
+      <DiferenciaisSection />
+
+      {/* Seção com logos ou depoimentos de condomínios atendidos */}
+      <ClientesAtendidosSection />
+
+      {/* Seção CTA com fundo destacado, botão chamativo (azul/vermelho) */}
+      <CTASection />
+
+      {/* Contato com form e dados separados e visuais modernos */}
+      <ContatoForm />
+      <ContatoInfo />
+
+      {/* Localização com iframe responsivo e estilo claro */}
+      <LocationSection />
+
+      {/* Rodapé limpo com colunas e tons neutros */}
+      <Footer />
     </>
   )
 }
