@@ -1,6 +1,6 @@
 // src/components/CaseStudiesSection.jsx
 import React, { useRef, useState, useEffect } from "react";
-import { PlayCircle, ArrowUpRight } from "lucide-react";
+import { PlayCircle, X, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,31 +8,38 @@ import Video from "../assets/video.mp4";
 import img1 from "../assets/4.jpg";
 
 export default function CaseStudiesSection() {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const modalVideoRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const handlePlay = (e) => {
-    if (e) e.stopPropagation();
-    if (videoRef.current) {
-      videoRef.current.muted = false;
-      videoRef.current.play();
-      setIsPlaying(true);
+  const openModal = () => {
+    setIsModalOpen(true);
+    setTimeout(() => {
+      if (modalVideoRef.current) {
+        modalVideoRef.current.play();
+      }
+    }, 100); // dá tempo da modal renderizar antes de tentar tocar
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    if (modalVideoRef.current) {
+      modalVideoRef.current.pause();
+      modalVideoRef.current.currentTime = 0;
     }
   };
 
   return (
     <section className="relative w-full bg-[#1c1c2b] overflow-hidden font-sans">
-      {/* Vídeo de fundo */}
+      {/* Vídeo de fundo (mudo, sem controle, apenas visual) */}
       <div
         className="relative w-full h-[400px] lg:h-[600px] overflow-hidden cursor-pointer"
-        onClick={handlePlay}
+        onClick={openModal}
       >
         <video
-          ref={videoRef}
           className="w-full h-full object-cover"
           autoPlay
           loop
@@ -45,21 +52,46 @@ export default function CaseStudiesSection() {
 
         {/* Gradiente de fundo */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c2b]/90 via-[#1c1c2b]/60 to-transparent pointer-events-none" />
+
+        {/* Botão de play centralizado */}
+        {!isModalOpen && (
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                openModal();
+              }}
+              className="flex items-center justify-center w-28 h-28 rounded-full border-4 border-white hover:bg-white/20 transition-all duration-300"
+            >
+              <PlayCircle className="w-16 h-16 text-white" />
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Botão de play */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <button
-            onClick={(e) => handlePlay(e)}
-            className="flex items-center justify-center w-20 h-20 rounded-full border-4 border-white hover:bg-white/20 transition-all duration-300"
-          >
-            <PlayCircle className="w-12 h-12 text-white" />
-          </button>
+      {/* Modal do vídeo */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center">
+          <div className="relative w-full max-w-4xl mx-auto p-4">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-white hover:text-red-500 transition"
+            >
+              <X size={32} />
+            </button>
+            <video
+              ref={modalVideoRef}
+              className="w-full rounded-lg"
+              controls
+            >
+              <source src={Video} type="video/mp4" />
+              Seu navegador não suporta vídeos HTML5.
+            </video>
+          </div>
         </div>
       )}
 
-      {/* Conteúdo */}
+      {/* Conteúdo abaixo */}
       <div className="relative z-10 py-16 px-4 md:px-10 text-center text-white">
         <div className="max-w-6xl mx-auto">
           {/* Subtítulo */}
@@ -136,7 +168,7 @@ export default function CaseStudiesSection() {
             ))}
           </div>
 
-          {/* Botão CTA corrigido */}
+          {/* Botão CTA */}
           <div className="mt-10">
             <button className="flex items-center gap-2 border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#1c1c2b] transition-all">
               View All Work
