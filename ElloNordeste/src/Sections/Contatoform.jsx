@@ -1,35 +1,105 @@
-// src/Sections/ContatoForm.jsx
-const ContatoForm = () => {
+import { motion } from "framer-motion";
+import img1 from "../assets/4.jpg";
+
+export default function ContactSection() {
   return (
-    <section className="bg-white py-12 px-6" id="formulario-contato">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center">Fale Conosco</h2>
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Seu nome"
-            className="w-full p-3 border rounded-md"
-          />
-          <input
-            type="email"
-            placeholder="Seu e-mail"
-            className="w-full p-3 border rounded-md"
-          />
-          <textarea
-            placeholder="Sua mensagem"
-            rows="5"
-            className="w-full p-3 border rounded-md"
-          />
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
-          >
-            Enviar Mensagem
-          </button>
-        </form>
+    <section
+      className="relative bg-cover bg-center py-24 text-white"
+      style={{ backgroundImage: `url(${img1})` }}
+    >
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        {/* Título e subtítulo */}
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-4"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Solicite uma consultoria gratuita
+        </motion.h2>
+        <motion.p
+          className="text-lg text-white/80 mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Fale com um especialista e entenda como podemos ajudar seu condomínio
+        </motion.p>
+
+        {/* Formulário moderno */}
+        <motion.form
+          className="bg-white/90 p-8 rounded-xl shadow-xl text-black grid gap-6"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="grid md:grid-cols-2 gap-6">
+            <FloatingInput label="Seu nome" name="nome" type="text" required />
+            <FloatingInput label="Seu e-mail" name="email" type="email" required />
+          </div>
+
+          <FloatingInput label="Assunto" name="assunto" type="text" required />
+          <FloatingTextarea label="Mensagem" name="mensagem" required />
+
+          <div className="text-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              type="submit"
+              className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+            >
+              ENVIAR
+            </motion.button>
+          </div>
+        </motion.form>
       </div>
     </section>
   );
-};
+}
 
-export default ContatoForm;
+// Componente de input com floating label
+function FloatingInput({ label, name, type = "text", required = false }) {
+  return (
+    <div className="relative">
+      <input
+        type={type}
+        name={name}
+        required={required}
+        placeholder=" "
+        className="peer w-full p-4 pt-6 text-sm bg-white border border-gray-300 rounded-md placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400"
+      />
+      <label
+        htmlFor={name}
+        className="absolute left-4 top-4 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
+      >
+        {label}
+      </label>
+    </div>
+  );
+}
+
+// Textarea com floating label
+function FloatingTextarea({ label, name, required = false }) {
+  return (
+    <div className="relative">
+      <textarea
+        name={name}
+        rows={4}
+        required={required}
+        placeholder=" "
+        className="peer w-full p-4 pt-6 text-sm bg-white border border-gray-300 rounded-md placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 resize-none"
+      />
+      <label
+        htmlFor={name}
+        className="absolute left-4 top-4 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1.5 peer-focus:text-sm peer-focus:text-red-500"
+      >
+        {label}
+      </label>
+    </div>
+  );
+}
