@@ -8,6 +8,7 @@ import Sobre from './Sections/Sobre';
 import Localizacao from './Sections/localizacao';
 import Servicos from './Sections/servicos';
 import MetricsSection from './Sections/metricas';
+import VideoIntroSection from './Sections/video';
 
 
 
@@ -20,6 +21,7 @@ function App() {
     <MetricsSection/>
     <Servicos/>
     <Diferenciais/>
+    <VideoIntroSection/>
     <ContatoInfo/>
     <ContatoForm/>
     <Localizacao/>
