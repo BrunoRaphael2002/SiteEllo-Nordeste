@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import img1 from "../assets/4.jpg";
 import img2 from "../assets/4.jpg";
 import img3 from "../assets/4.jpg";
-import img4 from "../assets/4.jpg";
+import img4 from "../assets/CEO.webp";
 
 const diferenciais = [
   {
@@ -29,9 +29,9 @@ const diferenciais = [
   },
   {
     id: 4,
-    titulo: "Gestão Eficiente",
+    titulo: "CEO da empresa e advogado",
     descricao:
-      "Redução de custos com foco na valorização do patrimônio, controle orçamentário e organização financeira do condomínio.",
+      "Inaldo Dantas é um advogado brasileiro especializado em direito condominial desde 1987. Atuou como presidente do Secovi-PB por quatro mandatos consecutivos e é editor e fundador da Revista Condomínio. Além disso, é colunista em diversos veículos de comunicação e autor de livros sobre gestão condominial. Organiza a FESÍNDICO, feira de condomínios do Nordeste, e ministra cursos e palestras na área.​",
     imagem: img4,
   },
 ];
@@ -42,7 +42,7 @@ export default function DiferenciaisSection() {
   return (
     <section
       id="diferenciais"
-      className="w-full bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white "
+      className="w-full  h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] text-white"
     >
       {/* Título da sessão */}
       <div className="text-center py-12">
@@ -52,15 +52,15 @@ export default function DiferenciaisSection() {
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full">
+      {/* Cards ocupando toda a altura da tela */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full h-[calc(100vh-8rem)] gap-0 ">
         {diferenciais.map((item, index) => {
           const isActive = ativo === item.id;
 
           return (
             <motion.div
               key={item.id}
-              className="relative group w-full aspect-[4/5] cursor-pointer overflow-hidden border border-white/10"
+              className="relative group w-full h-full cursor-pointer overflow-hidden border border-white/10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -73,36 +73,35 @@ export default function DiferenciaisSection() {
                 style={{ backgroundImage: `url(${item.imagem})` }}
               />
 
-              {/* Overlay escuro para contraste ao passar o mouse */}
+              {/* Overlay escuro com efeito hover */}
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-
-              {/* Gradiente por cima do texto */}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0f172a] via-[#1e293b]/80 to-transparent z-10 pointer-events-none transition-opacity duration-500" />
 
               {/* Conteúdo */}
               <div className="absolute bottom-0 left-0 z-20 w-full h-full flex flex-col justify-end text-white pointer-events-none">
                 <div
-                  className={`
-                    relative px-4 pb-6 transition-transform duration-500 transform
-                    ${isActive ? "translate-y-0" : "translate-y-[40%] group-hover:translate-y-0"}
-                    pointer-events-auto
+                  className={`relative px-4 pb-6 transition-all duration-500 overflow-hidden pointer-events-auto
+                    ${isActive ? "max-h-[calc(100%-6rem)]" : "max-h-28 group-hover:max-h-[calc(100%-6rem)]"}
                   `}
                 >
-                  <h3 className="text-xl md:text-2xl font-bold mb-2 relative z-20">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">
                     {String(index + 1).padStart(2, "0")}. {item.titulo}
                   </h3>
-                  <p className="text-sm md:text-base leading-snug mb-3 relative z-20">
+
+                  <p
+                    className={`text-sm md:text-base leading-snug mb-3 overflow-hidden transition-all duration-300
+                      ${isActive ? "" : "line-clamp-2 group-hover:line-clamp-none"}
+                    `}
+                  >
                     {item.descricao}
                   </p>
-                  <button
-                    className="text-sm md:text-base font-semibold text-blue-300 hover:underline relative z-20"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setAtivo(isActive ? null : item.id);
-                    }}
+
+                  <a
+                    href={`/diferenciais/${item.id}`}
+                    className="inline-block mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-base font-semibold rounded"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    {isActive ? "Fechar" : "Saiba mais"}
-                  </button>
+                    Saiba mais
+                  </a>
                 </div>
               </div>
             </motion.div>

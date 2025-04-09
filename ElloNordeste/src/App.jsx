@@ -1,35 +1,34 @@
 import Header from './Components/header';
 import Carrosel from './Components/Carrosel';
 import Footer from './Components/Footer';
-import ContatoInfo from './Sections/ContatoInfo';
-import Diferenciais from './Sections/Diferenciais';
+
 import Sobre from './Sections/Sobre';
-import Localizacao from './Sections/localizacao';
-import Servicos from './Sections/servicos';
+import Diferenciais from './Sections/Diferenciais';
 import MetricsSection from './Sections/metricas';
-import VideoIntroSection from './Sections/video';
-import ContactSection from './Sections/Contatoform';
+import Servicos from './Sections/servicos';
 import AppSection from './Sections/aplicativo';
-
-
+import VideoIntroSection from './Sections/video';
+import ContatoInfo from './Sections/ContatoInfo';
+import ContactSection from './Sections/Contatoform';
+import Localizacao from './Sections/localizacao';
 
 function App() {
   return (
     <>
-    <Header/>
-    <Carrosel/>
-    <Sobre/>
-    <MetricsSection/>
-    <Servicos/>
-    <Diferenciais/>
-    <AppSection/>
-    <VideoIntroSection/>
-    <ContatoInfo/>
-    <ContactSection/>
-    <Localizacao/>
-    <Footer/>
+      <Header />
+      <Carrosel />
+      <Sobre />
+      <Diferenciais />
+      <MetricsSection />
+      <Servicos />
+      <AppSection />
+      <VideoIntroSection />
+      <ContatoInfo />
+      <ContactSection />
+      <Localizacao />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

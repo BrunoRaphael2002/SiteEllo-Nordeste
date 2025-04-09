@@ -34,8 +34,8 @@ export default function AboutSection() {
           </span>
           <h2 className="text-4xl font-bold text-gray-800 mb-6">Sobre a Nossa Administradora</h2>
           <p className="text-gray-600 mb-6">
-            Somos uma empresa especializada na gestão de condomínios residenciais e comerciais, oferecendo serviços completos com total transparência, eficiência e tecnologia.
-          </p>
+          Atuando no mercado desde o ano de 1987, nossa empresa tem se especializado em oferecer aos clientes, uma cesta de serviços que se encaixe dentro das necessidades que sua administração exige, pois administrar Condomínios, ratear despesas, minimizar custos maximizando serviços, são atividades necessárias que, quando bem geridas, trazem tranquilidade e bem estar a todos os envolvidos.</p>
+          <p className="text-gray-600 mb-6 py-5">Além de contar com pessoal especializado para prestar toda  a assessoria contábil, financeira e administrativa, o GRUPO ELLO conta com um sistema de informação atualizado e dinâmico que permite oferecer a nossos clientes posição diária de receita e despesas.</p>
 
           {/* Blocos de destaque */}
           <div className="space-y-6">
