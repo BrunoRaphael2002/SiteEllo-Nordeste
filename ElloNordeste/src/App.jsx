@@ -8,9 +8,10 @@ import MetricsSection from './Sections/metricas';
 import Servicos from './Sections/servicos';
 import AppSection from './Sections/aplicativo';
 import VideoIntroSection from './Sections/video';
-import ContatoInfo from './Sections/ContatoInfo';
+/*import ContatoInfo from './Sections/ContatoInfo';
 import ContactSection from './Sections/Contatoform';
-import Localizacao from './Sections/localizacao';
+import Localizacao from './Sections/localizacao';*/
+import SessaoCombinada from './Sections/infointens';
 
 function App() {
   return (
@@ -21,12 +22,11 @@ function App() {
      
       <MetricsSection />
       <Diferenciais />
-      <AppSection />
+    
       <Servicos />
+      <AppSection />
       <VideoIntroSection />
-      <ContatoInfo />
-      <ContactSection />
-      <Localizacao />
+      <SessaoCombinada/>
       <Footer />
     </>
   );
