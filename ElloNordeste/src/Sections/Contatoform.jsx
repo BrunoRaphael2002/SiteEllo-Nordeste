@@ -9,10 +9,10 @@ export default function ContactSection() {
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
         {/* Título e subtítulo */}
         <motion.h2
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-bold mb-4 tracking-tight"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -30,9 +30,9 @@ export default function ContactSection() {
           Fale com um especialista e entenda como podemos ajudar seu condomínio
         </motion.p>
 
-        {/* Formulário moderno */}
+        {/* Formulário refinado */}
         <motion.form
-          className="bg-white/90 p-8 rounded-xl shadow-xl text-black grid gap-6"
+          className="bg-white/95 p-10 rounded-3xl shadow-2xl text-black grid gap-6 backdrop-blur-md"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -51,9 +51,9 @@ export default function ContactSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               type="submit"
-              className="bg-red-500 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+              className="bg-red-500 hover:bg-red-600 text-white font-bold px-10 py-3 rounded-full shadow-md transition-all duration-300"
             >
-              ENVIAR
+              ENVIAR MENSAGEM
             </motion.button>
           </div>
         </motion.form>
@@ -62,7 +62,7 @@ export default function ContactSection() {
   );
 }
 
-// Componente de input com floating label
+// Input com label flutuante
 function FloatingInput({ label, name, type = "text", required = false }) {
   return (
     <div className="relative">
@@ -71,7 +71,7 @@ function FloatingInput({ label, name, type = "text", required = false }) {
         name={name}
         required={required}
         placeholder=" "
-        className="peer w-full p-4 pt-6 text-sm bg-white border border-gray-300 rounded-md placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400"
+        className="peer w-full p-4 pt-6 text-base bg-white border border-gray-300 rounded-xl placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400"
       />
       <label
         htmlFor={name}
@@ -83,7 +83,7 @@ function FloatingInput({ label, name, type = "text", required = false }) {
   );
 }
 
-// Textarea com floating label
+// Textarea com label flutuante
 function FloatingTextarea({ label, name, required = false }) {
   return (
     <div className="relative">
@@ -92,7 +92,7 @@ function FloatingTextarea({ label, name, required = false }) {
         rows={4}
         required={required}
         placeholder=" "
-        className="peer w-full p-4 pt-6 text-sm bg-white border border-gray-300 rounded-md placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 resize-none"
+        className="peer w-full p-4 pt-6 text-base bg-white border border-gray-300 rounded-xl placeholder-transparent focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-red-400 resize-none"
       />
       <label
         htmlFor={name}

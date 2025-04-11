@@ -18,10 +18,11 @@ function App() {
       <Header />
       <Carrosel />
       <Sobre />
-      <Diferenciais />
+     
       <MetricsSection />
-      <Servicos />
+      <Diferenciais />
       <AppSection />
+      <Servicos />
       <VideoIntroSection />
       <ContatoInfo />
       <ContactSection />
