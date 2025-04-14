@@ -12,6 +12,7 @@ import VideoIntroSection from './Sections/video';
 import ContactSection from './Sections/Contatoform';
 import Localizacao from './Sections/localizacao';*/
 import SessaoCombinada from './Sections/infointens';
+import AtendimentoSection from './Sections/atendimeto';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Servicos />
       <AppSection />
       <VideoIntroSection />
+      <AtendimentoSection/>
       <SessaoCombinada/>
       <Footer />
     </>

@@ -1,6 +1,6 @@
 // src/components/CaseStudiesSection.jsx
 import React, { useRef, useState, useEffect } from "react";
-import { PlayCircle, ArrowUpRight, X } from "lucide-react";
+import { PlayCircle, X } from "lucide-react";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -66,7 +66,9 @@ export default function CaseStudiesSection() {
           {/* Subtítulo */}
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-3 h-3 bg-[#ef476f] rounded-full"></div>
-            <span className="uppercase tracking-widest text-sm font-medium">Case studies</span>
+            <span className="uppercase tracking-widest text-sm font-medium">
+              Casos de Sucesso
+            </span>
           </div>
 
           <motion.h2
@@ -76,25 +78,25 @@ export default function CaseStudiesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Showcasing
+            Resultados que Transformam Condomínios
           </motion.h2>
 
           {/* Grid dos cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Financial Restructuring for Manufacturing Firm",
-                tag: "FINANCIAL SERVICES",
+                title: "Redução de Inadimplência em 35%",
+                tag: "GESTÃO FINANCEIRA",
                 image: img1,
               },
               {
-                title: "Operational Efficiency Enhancement for Retail Chain",
-                tag: "FINANCIAL SERVICES",
+                title: "Portal do Condômino Implementado",
+                tag: "TECNOLOGIA",
                 image: img1,
               },
               {
-                title: "Marketing Digital Transformation Journey",
-                tag: "STRATEGY CONSULTING",
+                title: "Assembleias Virtuais Modernizadas",
+                tag: "ASSEMBLEIAS",
                 image: img1,
               },
             ].map((card, index) => (
@@ -123,26 +125,6 @@ export default function CaseStudiesSection() {
                 </div>
               </motion.div>
             ))}
-          </div>
-
-          {/* Paginação fake */}
-          <div className="mt-10 flex justify-center space-x-2">
-            {[0, 1, 2].map((_, i) => (
-              <div
-                key={i}
-                className={`w-3 h-3 rounded-full ${
-                  i === 0 ? "bg-[#ef476f]" : "bg-white/30"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Botão CTA */}
-          <div className="mt-10">
-            <button className="flex items-center gap-2 border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#1c1c2b] transition-all">
-              View All Work
-              <ArrowUpRight size={16} />
-            </button>
           </div>
         </div>
       </div>

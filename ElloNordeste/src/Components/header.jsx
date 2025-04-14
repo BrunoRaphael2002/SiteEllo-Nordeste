@@ -10,7 +10,7 @@ const Header = () => {
     { name: "Sobre", href: "#sobre" },
     { name: "Serviços", href: "#servicos" },
     { name: "Contato", href: "#contato" },
-    { name: "Área do Condomínio", href: "https://sistema.empresa.com", external: true },
+    { name: "Área do Condomínio", href: "https://grupoello2017.superlogica.net/clients/areadocondomino/", external: true },
   ];
 
   return (

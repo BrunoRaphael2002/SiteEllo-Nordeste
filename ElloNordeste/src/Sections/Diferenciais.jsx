@@ -1,46 +1,72 @@
-import { ShieldCheck, Eye, Smartphone, Users } from "lucide-react";
-import img2 from "../assets/4.jpg"; // Substitua pela imagem desejada
+import React from "react";
+import {
+  Users,
+  FileText,
+  BarChart3,
+  PhoneCall,
+  DollarSign,
+} from "lucide-react";
+import img2 from "../assets/4.jpg";
 
 const diferenciais = [
   {
-    icon: <ShieldCheck size={28} className="text-red-600" />,
-    title: "Segurança Total",
-    description: "Soluções 24h com resposta imediata e cobertura completa para condomínios e empresas.",
-  },
-  {
-    icon: <Eye size={28} className="text-red-600" />,
-    title: "Monitoramento Inteligente",
-    description: "Tecnologia avançada com detecção de movimentos e alertas automáticos por IA.",
-  },
-  {
-    icon: <Smartphone size={28} className="text-red-600" />,
-    title: "Acesso via App",
-    description: "Controle total através do nosso aplicativo: entradas, câmeras e notificações em tempo real.",
-  },
-  {
     icon: <Users size={28} className="text-red-600" />,
-    title: "Atendimento Personalizado",
-    description: "Equipe especializada para entender e atender às necessidades do seu condomínio.",
+    title: "Mais de 30 anos de experiência",
+    description:
+      "Fundada em 1987, com atuação em João Pessoa e Recife em mais de 150 condomínios.",
+  },
+  {
+    icon: <FileText size={28} className="text-red-600" />,
+    title: "Assessoria financeira, contábil e administrativa",
+    description:
+      "Equipe especializada e sistema de informação dinâmico para suporte completo aos condomínios.",
+  },
+  {
+    icon: <BarChart3 size={28} className="text-red-600" />,
+    title: "Transparência e relatórios diários",
+    description:
+      "Emissão de relatórios diários de receitas e despesas para total visibilidade financeira.",
+  },
+  {
+    icon: <PhoneCall size={28} className="text-red-600" />,
+    title: "Atendimento humanizado",
+    description:
+      "Suporte ao síndico e condôminos presencial, por e-mail e telefone, com respostas ágeis para pendências e emergências.",
+  },
+  {
+    icon: <DollarSign size={28} className="text-red-600" />,
+    title: "Minimização de custos",
+    description:
+      "Estratégias dedicadas para reduzir despesas e otimizar serviços, maximizando o bem‑estar dos moradores.",
   },
 ];
 
 export default function DiferenciaisSection() {
   return (
-    <section id="diferenciais" className="py-20 bg-white relative overflow-hidden">
+    <section
+      id="diferenciais"
+      className="py-20 bg-white relative overflow-hidden"
+    >
+      {/* Grid de conteúdo */}
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 items-center gap-16 relative z-10">
-        {/* Texto dos diferenciais */}
+        {/* Texto */}
         <div>
           <span className="inline-flex items-center text-sm text-red-600 font-medium mb-2">
-            <span className="w-2 h-2 rounded-full bg-red-600 mr-2" /> Nossos Diferenciais
+            <span className="w-2 h-2 rounded-full bg-red-600 mr-2" />
+            Nossos Diferenciais
           </span>
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">Por que escolher nossa empresa?</h2>
-          <p className="text-gray-600 mb-6">
-            Oferecemos soluções completas e inovadoras em segurança eletrônica para proteger o que mais importa.
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            Por que escolher a Ello Nordeste?
+          </h2>
+          <p className="text-gray-600 mb-8 max-w-xl">
+            Somos referência em administração de condomínios, unindo tradição,
+            transparência e atendimento personalizado para garantir tranquilidade
+            e eficiência na gestão.
           </p>
 
           <div className="space-y-6">
-            {diferenciais.map((item, index) => (
-              <div key={index} className="flex items-start space-x-4">
+            {diferenciais.map((item, idx) => (
+              <div key={idx} className="flex items-start space-x-4">
                 <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
                   {item.icon}
                 </div>
@@ -53,15 +79,15 @@ export default function DiferenciaisSection() {
           </div>
 
           <button className="mt-8 inline-flex items-center text-sm text-red-600 font-semibold hover:underline">
-            Solicite uma demonstração →
+            Saiba mais sobre nossos diferenciais →
           </button>
         </div>
 
-        {/* Imagem à direita */}
+        {/* Imagem ilustrativa */}
         <div className="relative">
           <img
             src={img2}
-            alt="Monitoramento eletrônico"
+            alt="Administradora de condomínios"
             className="rounded-2xl shadow-xl w-full h-auto object-cover"
           />
         </div>
