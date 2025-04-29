@@ -7,12 +7,16 @@ import Diferenciais from './Sections/Diferenciais';
 import MetricsSection from './Sections/metricas';
 import Servicos from './Sections/servicos';
 import AppSection from './Sections/aplicativo';
-import VideoIntroSection from './Sections/video';
 /*import ContatoInfo from './Sections/ContatoInfo';
 import ContactSection from './Sections/Contatoform';
 import Localizacao from './Sections/localizacao';*/
 import SessaoCombinada from './Sections/infointens';
 import AtendimentoSection from './Sections/atendimeto';
+import ClienteGaleiraSeciton from './Sections/video'
+/*import ChatWidget from './Components/chat';
+import { VisitCounter } from './Components/visit';
+<ChatWidget/>
+      <VisitCounter/>*/
 
 function App() {
   return (
@@ -26,9 +30,10 @@ function App() {
     
       <Servicos />
       <AppSection />
-      <VideoIntroSection />
+      <ClienteGaleiraSeciton/>
       <AtendimentoSection/>
       <SessaoCombinada/>
+      
       <Footer />
     </>
   );

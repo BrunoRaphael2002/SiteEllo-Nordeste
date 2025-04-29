@@ -67,29 +67,23 @@ export default function ServicosSection() {
   return (
     <section className="relative py-20 px-6 lg:px-20 bg-white overflow-hidden">
       {/* Fundo de bolinhas */}
-      <div className="absolute inset-0 bg-[radial-gradient(#fcdcdc_1px,transparent_1px)] bg-[size:16px_16px] z-0 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#dce7fc_1px,transparent_1px)] bg-[size:16px_16px] z-0 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
         {/* Imagem lateral */}
-        <div className="order-1 lg:order-none h-full">
+        <div className="order-1 lg:order-none h-full hidden lg:block">
           <div className="relative h-full rounded-xl overflow-hidden shadow-lg">
             <img
               src={lateralImage}
               alt="Equipe de trabalho"
               className="w-full h-full object-cover rounded-xl"
             />
-            <div className="absolute bottom-0 right-0 bg-red-600 text-white p-6 rounded-tl-2xl w-60 flex flex-col justify-between h-36">
-              <ArrowUpRight className="text-white mb-4" />
-              <span className="font-medium text-lg leading-tight">
-                Conheça todas as soluções
-              </span>
-            </div>
           </div>
         </div>
 
         {/* Texto + Cards */}
         <div className="order-2 lg:order-none flex flex-col justify-center">
-          <p className="text-sm text-red-600 font-medium mb-2">Nossos serviços</p>
+          <p className="text-sm text-blue-600 font-medium mb-2">Nossos serviços</p>
           <h2 className="text-4xl font-light leading-tight mb-4">
             As <span className="font-semibold">melhores soluções</span> <br />
             em <span className="font-semibold">um só lugar</span>
@@ -103,16 +97,16 @@ export default function ServicosSection() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="relative bg-white p-6 rounded-lg border border-red-100 hover:border-red-300 shadow transition-all duration-300 hover:shadow-lg"
+                className="relative bg-white p-6 rounded-lg border border-blue-100 hover:border-blue-300 shadow transition-all duration-300 hover:shadow-lg"
               >
-                <service.Icon className="text-red-600 w-6 h-6 mb-4" />
+                <service.Icon className="text-blue-600 w-6 h-6 mb-4" />
                 <h3 className="font-medium text-lg mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-500 mb-4">
                   {service.description}
                 </p>
                 <a
                   href="#"
-                  className="text-sm font-medium text-red-600 flex items-center gap-1"
+                  className="text-sm font-medium text-blue-600 flex items-center gap-1"
                 >
                   Ver mais <span className="text-xs">→</span>
                 </a>
