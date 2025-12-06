@@ -1,4 +1,4 @@
-import img1 from '../assets/1.jpg';
+import img1 from '../assets/recepcionista.png';
 // src/components/AboutSection.jsx
 export default function AboutSection() {
   return (

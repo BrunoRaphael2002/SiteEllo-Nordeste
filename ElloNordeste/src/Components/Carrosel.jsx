@@ -1,44 +1,79 @@
-import { ArrowRight } from 'lucide-react';
-import img1 from '../assets/1.jpg'; // Sua imagem fixa de fundo
+import { ArrowRight } from "lucide-react";
+import img1 from "../assets/1.jpg";
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full h-[80vh] md:h-screen">
+    <section className="relative w-full min-h-[90vh] flex items-center justify-center text-white">
+      {/* Imagem de fundo */}
       <div
-        className="w-full h-full bg-cover bg-center relative"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${img1})` }}
-      >
-        {/* Gradiente para melhorar contraste no topo */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/70 to-transparent z-10" />
+      />
 
-        {/* Camada escura geral + conteúdo */}
-        <div className="w-full h-full bg-black/50 flex items-center">
-          <div className="text-white max-w-3xl px-8 md:px-16 pt-20 md:pt-32 relative z-20">
-            {/* Slogan atualizado */}
-            <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-6">
-              Desde 1987 administrando com domínio
-            </h1>
+      {/* Gradiente azul escuro */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/90 via-[#0a1b4d]/80 to-[#0a1b4d]/95" />
 
-            {/* Botões */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#area-do-cliente"
-                className="inline-flex items-center justify-center bg-white text-[#1F1F2B] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-all duration-300"
-              >
-                Área do Cliente
-              </a>
+      {/* Conteúdo */}
+      <div className="relative text-center px-6 max-w-4xl mx-auto mt-24">
+        
+        {/* BADGE */}
+        <div className="inline-flex items-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm mb-6 border border-white/20">
+          <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+          Desde 1987 com excelência
+        </div>
 
-              <a
-                href="#contato"
-                className="inline-flex items-center justify-center bg-[#1F3F70] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#18345f] transition-all duration-300"
-              >
-                Solicitar Proposta
-                <ArrowRight size={18} className="ml-2" />
-              </a>
-            </div>
+        {/* TÍTULO */}
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+          Administrando{" "}
+          <span className="text-[#7da7ff]">com</span>{" "}
+          <span className="text-[#d95446]">domínio</span>
+        </h1>
+
+        {/* SUBTÍTULO */}
+        <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10">
+          Gestão profissional, transparente e humanizada de condomínios
+          em João Pessoa e Recife
+        </p>
+
+        {/* BOTÕES */}
+        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+          
+          {/* Botão vermelho */}
+          <a
+            href="#contato"
+            className="px-6 py-3 rounded-lg font-semibold bg-[#d95446] hover:bg-[#c24338] transition-all text-white shadow-md"
+          >
+            Solicitar Proposta
+          </a>
+
+          {/* Botão azul claro */}
+          <a
+            href="#servicos"
+            className="px-6 py-3 rounded-lg font-semibold bg-white/10 border border-white/20 hover:bg-white/20 transition-all text-white shadow-md"
+          >
+            Conhecer Serviços
+          </a>
+        </div>
+
+        {/* NÚMEROS */}
+        <div className="grid grid-cols-3 max-w-md mx-auto text-center gap-4">
+          <div>
+            <p className="text-3xl font-bold">150+</p>
+            <p className="text-sm opacity-70">Condomínios Atendidos</p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold">37+</p>
+            <p className="text-sm opacity-70">Anos de Experiência</p>
+          </div>
+
+          <div>
+            <p className="text-3xl font-bold">2</p>
+            <p className="text-sm opacity-70">Cidades</p>
           </div>
         </div>
+
       </div>
-    </div>
+    </section>
   );
 }

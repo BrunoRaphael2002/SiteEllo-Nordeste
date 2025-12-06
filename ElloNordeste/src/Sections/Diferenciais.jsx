@@ -6,7 +6,7 @@ import {
   PhoneCall,
   DollarSign,
 } from "lucide-react";
-import img2 from "../assets/4.jpg";
+import img2 from "../assets/job.png";
 
 const blue = "text-blue-700"; // cor azul "gravada"
 
