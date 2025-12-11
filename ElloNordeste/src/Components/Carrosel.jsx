@@ -3,7 +3,7 @@ import img1 from "../assets/1.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center text-white">
+    <section className="relative w-full min-h-[100vh] flex items-center justify-center text-white">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
