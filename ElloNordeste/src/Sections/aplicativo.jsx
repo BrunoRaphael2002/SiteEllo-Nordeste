@@ -1,5 +1,7 @@
 import { Bell, FileText, ClipboardList, TrendingUp } from "lucide-react";
 import appImage from "../assets/4.jpg"; // 👉 a imagem do card do app (PNG/JPG)
+import iosImage from '../assetes/ios.png';
+import Gplay from '../assets/Gplay.png';
 
 export default function AppSection() {
   return (
@@ -65,13 +67,13 @@ export default function AppSection() {
           {/* Botões */}
           <div className="flex flex-wrap gap-4 mt-10">
             <img
-              src="../assets/ios.png"
+              src={iosImage}
               alt="App Store"
               className="h-12 cursor-pointer hover:scale-105 transition"
             />
 
             <img
-              src="../assets/Gplay.png"
+              src={Gplay}
               alt="Google Play"
               className="h-12 cursor-pointer hover:scale-105 transition"
             />
