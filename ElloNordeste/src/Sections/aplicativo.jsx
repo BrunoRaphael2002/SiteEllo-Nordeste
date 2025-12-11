@@ -1,63 +1,93 @@
-import appImg1 from "../assets/4.jpg"; // imagem dos celulares
-import { motion } from "framer-motion";
+import { Bell, FileText, ClipboardList, TrendingUp } from "lucide-react";
+import appImage from "../assets/4.jpg"; // 👉 a imagem do card do app (PNG/JPG)
 
 export default function AppSection() {
   return (
-    <section className="w-full bg-gradient-to-r from-[#3a8ed2] to-[#3b127c] py-20 text-white">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-        
-        {/* Imagem dos celulares */}
-        <motion.div
-          className="w-full md:w-1/2 flex justify-center"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <img src={appImg1} alt="Aplicativo" className="max-w-xs md:max-w-md" />
-        </motion.div>
+    <section className="w-full bg-gradient-to-br from-[#f8eaea] via-[#f7f3f3] to-[#eedede] py-20">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
 
-        {/* Texto + Botões */}
-        <motion.div
-          className="w-full md:w-1/2"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Segunda via de boletos pelo app
+        {/* --- LADO ESQUERDO --- */}
+        <div className="w-full md:w-1/2">
+
+          {/* Badge */}
+          <span className="px-4 py-1 bg-[#e7c6c6] text-[#7a3b3b] rounded-full text-sm font-medium">
+            Portal do Condomínio
+          </span>
+
+          {/* Título */}
+          <h2 className="text-4xl font-bold text-gray-900 mt-4 leading-tight">
+            Gestão do Seu Condomínio<br />na Palma da Mão
           </h2>
-          <p className="text-lg text-white/90 mb-6 leading-relaxed">
-            Reduza as solicitações por segunda via de boletos, dando autonomia ao condômino para que ele visualize pelo celular e pague diretamente pelo aplicativo do seu banco.
+
+          {/* Texto */}
+          <p className="text-gray-600 mt-4 leading-relaxed">
+            Aplicativo completo com segunda via de boletos, comunicados,
+            documentos e muito mais. Acesso 24/7 de qualquer lugar.
           </p>
 
-          {/* Botões das lojas */}
-          <div className="flex gap-4">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Available_on_the_App_Store_(black)_SVG.svg"
-                alt="App Store"
-                className="h-12"
-              />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-transform hover:scale-105"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                alt="Google Play"
-                className="h-12"
-              />
-            </a>
+          {/* Grade de Recursos */}
+          <div className="grid grid-cols-2 gap-6 mt-10">
+
+            {/* Item */}
+            <div>
+              <Bell className="text-red-600 w-6 h-6 mb-2" />
+              <h4 className="font-semibold text-gray-900">Comunicados</h4>
+              <p className="text-gray-600 text-sm">
+                Receba notificações em tempo real do condomínio
+              </p>
+            </div>
+
+            <div>
+              <ClipboardList className="text-red-600 w-6 h-6 mb-2" />
+              <h4 className="font-semibold text-gray-900">Segunda Via de Boletos</h4>
+              <p className="text-gray-600 text-sm">
+                Acesse seus boletos digitalmente a qualquer hora
+              </p>
+            </div>
+
+            <div>
+              <FileText className="text-red-600 w-6 h-6 mb-2" />
+              <h4 className="font-semibold text-gray-900">Documentos</h4>
+              <p className="text-gray-600 text-sm">
+                Todos os seus documentos em um único lugar
+              </p>
+            </div>
+
+            <div>
+              <TrendingUp className="text-red-600 w-6 h-6 mb-2" />
+              <h4 className="font-semibold text-gray-900">Extratos e Relatórios</h4>
+              <p className="text-gray-600 text-sm">
+                Baixe relatórios mensais de sua unidade
+              </p>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Botões */}
+          <div className="flex flex-wrap gap-4 mt-10">
+            <img
+              src="../assets/ios.png"
+              alt="App Store"
+              className="h-12 cursor-pointer hover:scale-105 transition"
+            />
+
+            <img
+              src="../assets/Gplay.png"
+              alt="Google Play"
+              className="h-12 cursor-pointer hover:scale-105 transition"
+            />
+          </div>
+
+        </div>
+
+        {/* --- LADO DIREITO: APENAS A IMAGEM --- */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={appImage}
+            alt="App"
+            className="w-full max-w-lg drop-shadow-xl"
+          />
+        </div>
+
       </div>
     </section>
   );

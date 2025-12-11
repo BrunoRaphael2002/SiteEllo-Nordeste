@@ -13,6 +13,8 @@ import Localizacao from './Sections/localizacao';*/
 import SessaoCombinada from './Sections/infointens';
 import AtendimentoSection from './Sections/atendimeto';
 import ClienteGaleiraSeciton from './Sections/video'
+import TestimonialSection from './Sections/Depoimentos';
+import Faq from './Sections/faq';
 /*import ChatWidget from './Components/chat';
 import { VisitCounter } from './Components/visit';
 <ChatWidget/>
@@ -30,7 +32,9 @@ function App() {
     
       <Servicos />
       <AppSection />
+      <TestimonialSection/>
       <ClienteGaleiraSeciton/>
+        <Faq/>
       <AtendimentoSection/>
       <SessaoCombinada/>
       
