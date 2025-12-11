@@ -1,6 +1,6 @@
 import { Bell, FileText, ClipboardList, TrendingUp } from "lucide-react";
 import appImage from "../assets/4.jpg"; // 👉 a imagem do card do app (PNG/JPG)
-import iosImage from '../assetes/ios.png';
+import iosImage from '../assets/ios.png';
 import Gplay from '../assets/Gplay.png';
 
 export default function AppSection() {
