@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import HorarioModal from "../Components/modal";
-import Toast from "../components/Toast"; // ⬅ toast importado
+import Toast from "../Components/toast";
 
 export default function SessaoCombinada() {
   const formRef = useRef();
