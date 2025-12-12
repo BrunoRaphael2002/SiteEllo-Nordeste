@@ -7,37 +7,43 @@ import Diferenciais from './Sections/Diferenciais';
 import MetricsSection from './Sections/metricas';
 import Servicos from './Sections/servicos';
 import AppSection from './Sections/aplicativo';
-/*import ContatoInfo from './Sections/ContatoInfo';
+
+import ContatoInfo from './Sections/ContatoInfo';
 import ContactSection from './Sections/Contatoform';
-import Localizacao from './Sections/localizacao';*/
+import Localizacao from './Sections/localizacao';
+
 import SessaoCombinada from './Sections/infointens';
 import AtendimentoSection from './Sections/atendimeto';
 import ClienteGaleiraSeciton from './Sections/video'
 import TestimonialSection from './Sections/Depoimentos';
 import Faq from './Sections/faq';
-/*import ChatWidget from './Components/chat';
+import SolucoesDiferenciaisSection from './Sections/solucoes';
+import ChatWidget from './Components/chat';
 import { VisitCounter } from './Components/visit';
-<ChatWidget/>
-      <VisitCounter/>*/
+import CTA from './Sections/cta';
+
 
 function App() {
   return (
     <>
       <Header />
       <Carrosel />
-      <Sobre />
      
-      <MetricsSection />
+      <Sobre />
+      <CTA/>
+     
       <Diferenciais />
     
       <Servicos />
       <AppSection />
       <TestimonialSection/>
-      <ClienteGaleiraSeciton/>
+     
         <Faq/>
       <AtendimentoSection/>
       <SessaoCombinada/>
-      
+      <Localizacao/>
+      <ChatWidget/>
+     
       <Footer />
     </>
   );

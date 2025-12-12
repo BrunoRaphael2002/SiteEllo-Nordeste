@@ -4,8 +4,9 @@ import iosImage from '../assets/ios.png';
 import Gplay from '../assets/Gplay.png';
 
 export default function AppSection() {
+  
   return (
-    <section className="w-full bg-gradient-to-br from-[#f8eaea] via-[#f7f3f3] to-[#eedede] py-20">
+    <section className="w-full bg-gradient-to-br from-[#fffff] via-[#fffff] to-[#ffff] py-20">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
 
         {/* --- LADO ESQUERDO --- */}
