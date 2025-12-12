@@ -1,9 +1,20 @@
 import { ArrowRight } from "lucide-react";
 import img1 from "../assets/1.jpg";
+import { HashLink } from "react-router-hash-link";
 
 export default function HeroSection() {
+  const whatsappNumber = "5583991316577";
+
+  const message = encodeURIComponent(
+    "Olá bom dia, gostaria de solicitar uma proposta."
+  );
+
+  const handleClick = () => {
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+  };
+
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center justify-center text-white">
+    <section id="hero" className="relative w-full min-h-[100vh] flex items-center justify-center text-white">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -15,11 +26,11 @@ export default function HeroSection() {
 
       {/* Conteúdo */}
       <div className="relative text-center px-6 max-w-4xl mx-auto mt-24">
-        
+
         {/* BADGE */}
         <div className="inline-flex items-center px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm mb-6 border border-white/20">
           <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-          Desde 1987 com excelência
+          Desde 1987
         </div>
 
         {/* TÍTULO */}
@@ -37,22 +48,23 @@ export default function HeroSection() {
 
         {/* BOTÕES */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-          
+
           {/* Botão vermelho */}
-          <a
-            href="#contato"
+          <button
+            onClick={handleClick}
             className="px-6 py-3 rounded-lg font-semibold bg-[#d95446] hover:bg-[#c24338] transition-all text-white shadow-md"
           >
             Solicitar Proposta
-          </a>
+          </button>
 
           {/* Botão azul claro */}
-          <a
-            href="#servicos"
+          <HashLink
+            smooth
+            to="#servicos"
             className="px-6 py-3 rounded-lg font-semibold bg-white/10 border border-white/20 hover:bg-white/20 transition-all text-white shadow-md"
           >
             Conhecer Serviços
-          </a>
+          </HashLink>
         </div>
 
         {/* NÚMEROS */}

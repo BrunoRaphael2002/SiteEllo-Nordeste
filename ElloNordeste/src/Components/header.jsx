@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,20 +21,19 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img src={logo} alt="Logo" className="h-12 w-auto" />
-          <div className="flex flex-col leading-none">
-          </div>
         </div>
 
         {/* Navegação desktop */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <a
+            <HashLink
               key={item.name}
-              href={item.href}
+              smooth
+              to={item.href}
               className="text-gray-700 hover:text-blue-700 font-medium transition-colors"
             >
               {item.name}
-            </a>
+            </HashLink>
           ))}
         </nav>
 
@@ -61,14 +61,15 @@ const Header = () => {
         <div className="md:hidden bg-white border-t border-gray-200 px-6 pb-4">
           <nav className="flex flex-col text-left">
             {navItems.map((item) => (
-              <a
+              <HashLink
                 key={item.name}
-                href={item.href}
+                smooth
+                to={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="py-3 text-gray-700 border-b border-gray-100 font-medium hover:text-blue-700 transition-colors"
               >
                 {item.name}
-              </a>
+              </HashLink>
             ))}
 
             {/* CTA Mobile */}
