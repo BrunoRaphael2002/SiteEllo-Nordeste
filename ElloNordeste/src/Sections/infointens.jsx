@@ -63,7 +63,7 @@ Olá! Vim do site e gostaria de mais informações:
   };
 
   return (
-    <section className="py-20 bg-[#f4f7fb]">
+    <section className="py-20 bg-[#f4f7fb]" id="contato">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* TOAST */}

@@ -76,12 +76,12 @@ export default function TestimonialSection() {
 
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} className="text-red-500 text-lg">★</span>
+                  <span key={i} className="text-red-500 text-2xl leading-none">★</span>
                 ))}
               </div>
 
               {/* DEPOIMENTO */}
-              <p className="text-slate-700 leading-relaxed">
+              <p className="text-slate-700 text-lg leading-relaxed">
                 “{item.text}”
               </p>
 

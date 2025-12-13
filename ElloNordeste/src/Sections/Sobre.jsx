@@ -5,8 +5,8 @@ import img4 from "../assets/4.jpg";       // mini imagem 3
 
 export default function AboutSection() {
   return (
-    <section className="py-24 bg-[#f9fafb]">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+    <section className="py-24 bg-[#f9fafb]" id="sobre">
+      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center"  >
 
         {/* --- TEXTO ESQUERDA --- */}
         <div>

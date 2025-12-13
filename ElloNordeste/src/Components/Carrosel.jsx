@@ -13,7 +13,7 @@ export default function HeroSection() {
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
   };
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center justify-center text-white">
+    <section className="relative w-full min-h-[100vh] flex items-center justify-center text-white" id="hero">
       {/* Imagem de fundo */}
       <div
         className="absolute inset-0 bg-cover bg-center"

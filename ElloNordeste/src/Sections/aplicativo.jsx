@@ -1,13 +1,24 @@
-import { Bell, FileText, ClipboardList, TrendingUp } from "lucide-react";
-import appImage from "../assets/4.jpg"; // 👉 a imagem do card do app (PNG/JPG)
-import iosImage from '../assets/ios.png';
-import Gplay from '../assets/Gplay.png';
+import {
+  Bell,
+  FileText,
+  ClipboardList,
+  CreditCard,
+  ShieldCheck,
+  Wallet,
+  BarChart3,
+  Receipt,
+  Landmark,
+  Shield
+} from "lucide-react";
+
+import appImage from "../assets/superlogicaapp.png";
+import iosImage from "../assets/ios.png";
+import Gplay from "../assets/Gplay.png";
 
 export default function AppSection() {
-  
   return (
-    <section className="w-full bg-gradient-to-br from-[#fffff] via-[#fffff] to-[#ffff] py-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+    <section className="w-full bg-gradient-to-br from-white via-white to-white py-20">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start gap-16">
 
         {/* --- LADO ESQUERDO --- */}
         <div className="w-full md:w-1/2">
@@ -28,70 +39,131 @@ export default function AppSection() {
             documentos e muito mais. Acesso 24/7 de qualquer lugar.
           </p>
 
-          {/* Grade de Recursos */}
-          <div className="grid grid-cols-2 gap-6 mt-10">
+          {/* ===== SOLUÇÕES ===== */}
+          <h3 className="text-2xl font-bold text-gray-900 mt-16 mb-6">
+            Soluções disponíveis na plataforma
+          </h3>
 
-            {/* Item */}
-            <div>
-              <Bell className="text-red-600 w-6 h-6 mb-2" />
-              <h4 className="font-semibold text-gray-900">Comunicados</h4>
-              <p className="text-gray-600 text-sm">
-                Receba notificações em tempo real do condomínio
-              </p>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-            <div>
-              <ClipboardList className="text-red-600 w-6 h-6 mb-2" />
-              <h4 className="font-semibold text-gray-900">Segunda Via de Boletos</h4>
-              <p className="text-gray-600 text-sm">
-                Acesse seus boletos digitalmente a qualquer hora
-              </p>
-            </div>
+            <Card
+              icon={BarChart3}
+              title="Extratos e Relatórios"
+              text="Baixe relatórios mensais da sua unidade"
+            />
 
-            <div>
-              <FileText className="text-red-600 w-6 h-6 mb-2" />
-              <h4 className="font-semibold text-gray-900">Documentos</h4>
-              <p className="text-gray-600 text-sm">
-                Todos os seus documentos em um único lugar
-              </p>
-            </div>
+            <Card
+              icon={FileText}
+              title="Documentos"
+              text="Todos os seus documentos em um único lugar"
+            />
 
-            <div>
-              <TrendingUp className="text-red-600 w-6 h-6 mb-2" />
-              <h4 className="font-semibold text-gray-900">Extratos e Relatórios</h4>
-              <p className="text-gray-600 text-sm">
-                Baixe relatórios mensais de sua unidade
-              </p>
-            </div>
+            <Card
+              icon={Receipt}
+              title="Segunda Via de Boletos pelo App"
+              text="Acesse seus boletos digitalmente a qualquer hora"
+            />
+
+            <Card
+              icon={Bell}
+              title="Comunicados"
+              text="Receba notificações em tempo real do condomínio"
+            />
+
+            <Card
+              icon={ShieldCheck}
+              title="Inadimplência Zero"
+              text="Garantia mensal da receita para o condomínio. Tecnologia e riscos de crédito ficam por nossa conta."
+            />
+
+            <Card
+              icon={Landmark}
+              title="Conta Digital para Condomínios"
+              text="Automatize a conciliação bancária e ganhe até 6x mais eficiência na sua operação."
+            />
+
+            <Card
+              icon={CreditCard}
+              title="Recebimento por Cartão de Crédito"
+              text="A taxa condominial cobrada direto no cartão elimina atrasos por esquecimento."
+            />
+
+            <Card
+              icon={FileText}
+              title="Boleto"
+              text="Conciliação bancária automática, economia nas taxas de emissão e mais agilidade na gestão."
+            />
+
+            <Card
+              icon={Shield}
+              title="Seguro Condominial"
+              text="Automatize cotações, contratações e lançamentos das despesas de seguros obrigatórios."
+            />
+
+            <Card
+              icon={Wallet}
+              title="Crédito para Condomínios"
+              text="Solução rápida para problemas urgentes, com ótimas taxas e solidez financeira."
+            />
+
+            <Card
+              icon={ClipboardList}
+              title="Paybox"
+              text="Centralize todos os arquivos de pagamento dos seus condomínios de forma rápida e eficiente."
+              full
+            />
+
           </div>
 
           {/* Botões */}
-          <div className="flex flex-wrap gap-4 mt-10">
-            <img
-              src={iosImage}
-              alt="App Store"
-              className="h-12 cursor-pointer hover:scale-105 transition"
-            />
+          <div className="flex flex-wrap gap-4 mt-12">
+            <a
+              href="https://apps.apple.com/br/app/condom%C3%ADnio-%C3%A1rea-do-cond%C3%B4mino/id1160849001"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={iosImage}
+                alt="App Store"
+                className="h-12 hover:scale-105 transition cursor-pointer"
+              />
+            </a>
 
-            <img
-              src={Gplay}
-              alt="Google Play"
-              className="h-12 cursor-pointer hover:scale-105 transition"
-            />
+            <a
+              href="https://play.google.com/store/apps/details?id=com.condor.superlogica"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={Gplay}
+                alt="Google Play"
+                className="h-12 hover:scale-105 transition cursor-pointer"
+              />
+            </a>
           </div>
-
         </div>
 
-        {/* --- LADO DIREITO: APENAS A IMAGEM --- */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <img
-            src={appImage}
-            alt="App"
-            className="w-full max-w-lg drop-shadow-xl"
-          />
+        {/* --- IMAGEM (DESKTOP) --- */}
+        <div className="hidden md:flex md:w-1/2 relative">
+          <div className="flex items-center justify-center w-full py-20">
+            <img
+              src={appImage}
+              alt="App"
+              className="h-auto w-auto rounded-2xl shadow-2xl object-contain"
+            />
+          </div>
         </div>
 
       </div>
     </section>
   );
 }
+
+/* ===== CARD PADRÃO ===== */
+const Card = ({ icon: Icon, title, text, full }) => (
+  <div className={`border rounded-xl p-5 ${full ? "sm:col-span-2" : ""}`}>
+    <Icon className="text-red-600 w-6 h-6 mb-2" />
+    <h4 className="font-semibold text-gray-900">{title}</h4>
+    <p className="text-gray-600 text-sm">{text}</p>
+  </div>
+);

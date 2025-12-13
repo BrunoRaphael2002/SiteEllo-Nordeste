@@ -71,7 +71,7 @@ const items = [
 
 export default function SolucoesDiferenciaisSection() {
   return (
-    <section className="relative py-20 px-6 lg:px-20 bg-white overflow-hidden">
+    <section className="relative py-20 px-6 lg:px-20 bg-white overflow-hidden" id="servicos">
       {/* Fundo de bolinhas */}
       <div className="absolute inset-0 bg-[radial-gradient(#dce7fc_1px,transparent_1px)] bg-[size:16px_16px] z-0 pointer-events-none" />
 

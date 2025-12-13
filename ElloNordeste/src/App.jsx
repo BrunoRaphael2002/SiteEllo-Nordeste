@@ -21,6 +21,7 @@ import SolucoesDiferenciaisSection from './Sections/solucoes';
 import ChatWidget from './Components/chat';
 import { VisitCounter } from './Components/visit';
 import CTA from './Sections/cta';
+import ScrollToTopButton from './Components/scrolltotop';
 
 
 function App() {
@@ -33,18 +34,16 @@ function App() {
       <CTA/>
      
       <Diferenciais />
-    
       <Servicos />
       <AppSection />
       <TestimonialSection/>
-     
-        <Faq/>
-      <AtendimentoSection/>
       <SessaoCombinada/>
       <Localizacao/>
+       <Faq/>
       <ChatWidget/>
      
       <Footer />
+      <ScrollToTopButton/>
     </>
   );
 }
