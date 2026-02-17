@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import lateralImage from "../assets/4.jpg";
+import lateralImage from "../assets/recepcionista.png";
 
 const items = [
   {
@@ -117,13 +117,7 @@ export default function SolucoesDiferenciaisSection() {
             ))}
           </div>
 
-          {/* CTA */}
-          <a
-            href="#contato"
-            className="mt-10 inline-flex items-center px-6 py-3 bg-blue-700 text-white rounded-full font-semibold hover:bg-blue-800 transition"
-          >
-            Solicitar Proposta →
-          </a>
+       
         </div>
       </div>
     </section>
