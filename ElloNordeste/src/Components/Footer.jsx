@@ -22,7 +22,6 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><a href="#sobre" className="hover:text-white transition-colors">Sobre</a></li>
             <li><a href="#servicos" className="hover:text-white transition-colors">Serviços</a></li>
-            <li><a href="#clientes" className="hover:text-white transition-colors">Clientes</a></li>
             <li><a href="#contato" className="hover:text-white transition-colors">Contato</a></li>
           </ul>
         </div>
@@ -33,15 +32,15 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-gray-400">
             <li className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-blue-500" />
-              <a href="tel:+558312345678" className="hover:text-white transition-colors">(83) 1234-5678</a>
+              <a href="tel:+558399131657" className="hover:text-white transition-colors">(83)99131-6577</a>
             </li>
             <li className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-blue-500" />
-              <a href="mailto:contato@ellonordeste.com.br" className="hover:text-white transition-colors">contato@ellonordeste.com.br</a>
+              <a href="mailto:cristiano@ellonordeste.com.br" className="hover:text-white transition-colors">cristiano@ellonordeste.com.br</a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="w-5 h-5 text-blue-500 mt-1" />
-              <span>Rua Exemplo, 123<br />João Pessoa – PB</span>
+              <span>AV. Maria Rosa 1458, Manaíra<br />João Pessoa – PB</span>
             </li>
           </ul>
         </div>
